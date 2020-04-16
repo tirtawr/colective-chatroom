@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  background: #5fc5ed;
+  font-family: 'Baloo Da 2', cursive;
+}
