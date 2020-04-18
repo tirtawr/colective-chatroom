@@ -9,12 +9,16 @@ html, body {
 } */
 body {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: auto;
   padding: 0 20px;
   font-family: 'Noto Sans', sans;
 }
 
 .title {
+  text-align: center;
+}
+
+.prompt {
   text-align: center;
 }
 
@@ -30,7 +34,7 @@ body {
   font-size: 14px;
   padding: 5px 10px 5px 10px;
   margin: 10px 0;
-  width: 60%;
+  width: 50%;
 }
 
 .outgoing {
@@ -42,7 +46,7 @@ body {
   padding: 5px 10px 5px 10px;
   margin: 10px 0;
   width: 100%;
-  width: 60%;
+  width: 50%;
 }
 
 .message-form {
@@ -72,8 +76,39 @@ body {
   clear: both;
 }
 
-/* .container::after {
-  content: "";
-  clear: both;
-  display: table;
-} */
+/* (A) SET CONTAINER TO GRID */
+#grid-col {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* 3 COL LAYOUT */
+  /* WE CAN ALSO SPECIFY EXACT PX OR %
+  grid-template-columns: 200px 250px 150px;
+  grid-template-columns: 20% 40% 40%;
+  */
+  /* THE EASIER WAY TO MASS REPEAT MANY COLUMNS
+  grid-template-columns: repeat(4, 250px);
+  grid-template-columns: repeat(4, auto);
+  */
+}
+
+/* (B) STYLE EACH GRID CELL */
+div.cell {
+  background: #ffffff;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+
+/* (C) RESPONSIVE SUPPORT */
+/* 2 COL LAYOUT ON TABLET */
+@media screen and (max-width: 1000px) {
+  #grid-col {
+    grid-template-columns: auto auto;
+  }
+}
+
+/* 1 COL LAYOUT ON MOBILE */
+@media screen and (max-width: 600px) {
+  #grid-col {
+    grid-template-columns: 100%;
+  }
+}
