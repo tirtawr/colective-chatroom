@@ -73,7 +73,9 @@ io.sockets.on('connection', function (socket) {
   })
 
   // Listen for this client to disconnect and remove from user list
-  // also have to remove these people from the rooms, right? 
+  // also have to remove these people from the rooms, right?
+  //i guess associate the socket id with the name and then
+  //when they leave scan each room for the socket id associated with the name
   socket.on('disconnect', function () {
     console.log("Client has disconnected " + socket.id);
     users = users.filter(d => d !== socket.id)
