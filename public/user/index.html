@@ -1,18 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <h1 class='title'>Collective Chatroom</h1>  
 
-    <button onclick="sendMessage()">Click me to send message</button>
+<head>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
 
-    <script src="sketch.js"></script>
-  </body>
+</head>
+
+<body>
+  <h1 class="title">Chatter</h1>
+  <h2 class="prompt">Ask your partner a question. If stuck, consider these prompts:<br>prompt1 <br>prompt2 <br>prompt3</h2>
+
+  <!-- Chatroom1 -->
+  <div class="row">
+    <div class="column" style="background-color:#aaa;">
+      <h2>Chat Room 1</h2>
+      <div class="incoming">
+        <p>Hello. How are you today?</p>
+      </div>
+      <div class="outgoing">
+        <p></p>
+      </div>
+
+      <form class="message-form">
+        <input class="message_input" placeholder="Type here" type="text" />
+        <input class="message_button" value="Send" type="submit" />
+      </form>
+    </div>
+
+    <!-- Chatroom2 -->
+    <div class="column" style="background-color:#bbb;">
+      <h2>Chat Room 2</h2>
+      <p>Some text..</p>
+    </div>
+  </div>
+
+  <!-- Chatroom3 -->
+  <div class="row">
+    <div class="column" style="background-color:#ccc;">
+      <h2>Chat Room 3</h2>
+      <p>Some text..</p>
+    </div>
+
+    <!-- Chatroom4 -->
+    <div class="column" style="background-color:#ddd;">
+      <h2>Chat Room 4</h2>
+      <p>Some text..</p>
+    </div>
+
+    <!-- Chatroom5 -->
+    <div class="column" style="background-color:#ddd;">
+      <h2>Chat Room 5</h2>
+      <p>Some text..</p>
+    </div>
+
+    <!-- Chatroom6 -->
+    <div class="column" style="background-color:#ddd;">
+      <h2>Chat Room 6</h2>
+      <p>Some text..</p>
+    </div>
+
+  </div>
+
+
+
+  <!-- chat -->
+  <!-- <div class="incoming">
+    <p>Hello. How are you today?</p>
+  </div>
+  <div class="outgoing">
+    <div class="msg-header">
+      <p></p>
+    </div>
+  </div>
+
+  <form class="message-form">
+    <input class="message_input" placeholder="Type here" type="text" />
+    <input class="message_button" value="Send" type="submit" />
+  </form> -->
+  <!-- <button onclick="sendMessage()">Send</button> -->
+  <script src="sketch.js"></script>
+</body>
+
 </html>
