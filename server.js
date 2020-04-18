@@ -20,7 +20,7 @@ let userSockets = io.of('/user')
 // Listen for individual clients to connect and add them to user list
 userSockets.on('connection', function (userSocket) {
 
-  console.log("We have a new client: " + userSocket.id);
+  console.log("We have a new user client: " + userSocket.id);
 
   userSocket.emit('setCredentials', chatRoom.addUser(userSocket.id));
 
@@ -38,7 +38,25 @@ userSockets.on('connection', function (userSocket) {
 
   // Listen for this client to disconnect and remove from user list
   userSocket.on('disconnect', function () {
-    console.log("Client has disconnected " + userSocket.id);
+    console.log("User client has disconnected " + userSocket.id);
     chatRoom.removeUser(userSocket.id)
+  })
+})
+
+
+let adminSockets = io.of('/admin')
+// Listen for individual clients to connect and add them to user list
+adminSockets.on('connection', function (adminSocket) {
+
+  console.log("We have a new admin client: " + adminSocket.id);
+
+  adminSocket.on('status-request', function () {
+    adminSocket.emit('status-response', chatRoom.getStatus());
+  })
+
+  // Listen for this client to disconnect and remove from user list
+  adminSocket.on('disconnect', function () {
+    console.log("Admin client has disconnected " + adminSocket.id);
+    chatRoom.removeUser(adminSocket.id)
   })
 })

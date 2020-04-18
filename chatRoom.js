@@ -39,6 +39,14 @@ class ChatRoom {
     }
   }
 
+  getStatus() {
+    return {
+      availableRoomNumbers: this.availableRoomNumbers,
+      availableNames: this.availableNames,
+      users: this.users
+    }
+  }
+
   // Fetch an available name, if none are available, returns -1
   _getAvailableName() {
     if(this.availableNames.length > 0) {
