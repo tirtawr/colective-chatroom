@@ -64,11 +64,11 @@ io.sockets.on('connection', function (socket) {
   // to all the other users
   socket.on('message', function (message) {
     // message format
-   {
-     text: message.text,
-     roomNumber: message.roomNumber,
-     senderName: message.senderName
-   }
+  //  {
+  //    text: message.text,
+  //    roomNumber: message.roomNumber,
+  //    senderName: message.senderName
+  //  }
     io.sockets.emit('message', message);
   })
 
