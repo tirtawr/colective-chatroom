@@ -23,7 +23,7 @@ io.sockets.on('connection', function (socket) {
 
   users.push(socket.id);
 
-  name = random(names);
+  name = getRandomMember(names);
   names = names.filter(d => d !== name);
 
   let roomNumber;
@@ -82,3 +82,7 @@ io.sockets.on('connection', function (socket) {
     users = users.filter(d => d !== socket.id)
   })
 })
+
+function getRandomMember(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
