@@ -7,9 +7,9 @@ socket.on('connect', function () {
   socket.on('setCredentials', function (credentials) {
     // credentials format
     // {
+    //   role: String (USER or AUDIENCE)
     //   name: String
     //   roomNumber: Number
-    //   prompts: Array of String
     // }
     console.log('credentials', credentials)
     userData = credentials
