@@ -66,8 +66,8 @@ io.sockets.on('connection', function (socket) {
     // message format
    {
      text: message.text,
-     roomNumber: message.number,
-     senderName: message.name
+     roomNumber: message.roomNumber,
+     senderName: message.senderName
    }
     io.sockets.emit('message', message);
   })
