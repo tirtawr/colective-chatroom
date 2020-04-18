@@ -16,28 +16,29 @@ app.get('/', (req, res) => res.redirect('/user'));
 // Create socket connection
 let io = require('socket.io').listen(server);
 
+let userSockets = io.of('/user')
 // Listen for individual clients to connect and add them to user list
-io.sockets.on('connection', function (socket) {
+userSockets.on('connection', function (userSocket) {
 
-  console.log("We have a new client: " + socket.id);
+  console.log("We have a new client: " + userSocket.id);
 
-  socket.emit('setCredentials', chatRoom.addUser(socket.id));
+  userSocket.emit('setCredentials', chatRoom.addUser(userSocket.id));
 
   // When receiving message from users, we simply pass them forward
   // to all the other sockets
-  socket.on('message', function (message) {
+  userSocket.on('message', function (message) {
   // message format
   //  {
   //    text: message.text,
   //    roomNumber: message.roomNumber,
   //    senderName: message.senderName
   //  }
-    io.sockets.emit('message', message);
+    userSockets.emit('message', message);
   })
 
   // Listen for this client to disconnect and remove from user list
-  socket.on('disconnect', function () {
-    console.log("Client has disconnected " + socket.id);
-    chatRoom.removeUser(socket.id)
+  userSocket.on('disconnect', function () {
+    console.log("Client has disconnected " + userSocket.id);
+    chatRoom.removeUser(userSocket.id)
   })
 })

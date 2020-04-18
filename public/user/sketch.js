@@ -1,4 +1,4 @@
-socket = io();
+socket = io('/user');
 userData = {}
 
 socket.on('connect', function () {
