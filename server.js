@@ -64,11 +64,11 @@ io.sockets.on('connection', function (socket) {
   // to all the other users
   socket.on('message', function (message) {
     // message format
-    // {
-    //   text: String
-    //   roomNumber: Number
-    //   senderName: String
-    // }
+   {
+     text: message.text,
+     roomNumber: message.number,
+     senderName: message.name
+   }
     io.sockets.emit('message', message);
   })
 
@@ -76,6 +76,7 @@ io.sockets.on('connection', function (socket) {
   // also have to remove these people from the rooms, right?
   //i guess associate the socket id with the name and then
   //when they leave scan each room for the socket id associated with the name
+  //emit a remove message so they get removed from rooms
   socket.on('disconnect', function () {
     console.log("Client has disconnected " + socket.id);
     users = users.filter(d => d !== socket.id)
