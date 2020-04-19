@@ -25,7 +25,10 @@ $(document).ready(function() {
       //   senderName: String
       // }
       console.log('message', message)
+      // Add new message into the chatroom
       $(`#chatroom-messages-${message.roomNumber}`).append(`<p class="incoming"><strong>${message.senderName}</strong>: ${message.text}</p>`)
+      // Scroll to the bottom of the chatroom
+      $(`#chatroom-messages-${message.roomNumber}`).scrollTop($(`#chatroom-messages-${message.roomNumber}`)[0].scrollHeight);
     });
   });
 
@@ -35,6 +38,15 @@ $(document).ready(function() {
       roomNumber: document.credentials.roomNumber,
       senderName: document.credentials.name
     });
+
+    $("#user-input-input").val('')
   };
+
+  $('#user-input-input').keydown(function (event) {
+    var keypressed = event.keyCode || event.which;
+    if (keypressed == 13) {
+      document.sendMessage();
+    }
+  });
 
 });
