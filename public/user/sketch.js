@@ -12,9 +12,9 @@ $(document).ready(function() {
       // }
       console.log('credentials', credentials)
       document.credentials = credentials
-      if (credentials.role == "USER") {
-        $(`#chat-room-${credentials.roomNumber}`).append('<div><input class="message_input" id="user-input" placeholder="Type here" type="text" /><botton class="message_button" onclick="document.sendMessage()">Send</button></div>')
-      }
+      // if (credentials.role == "USER") {
+      //   $(`#chat-room-${credentials.roomNumber}`).append('<div><input class="message_input" id="user-input" placeholder="Type here" type="text" /><botton class="message_button" onclick="document.sendMessage()">Send</button></div>')
+      // }
     });
 
     socket.on('message', function(message) {
