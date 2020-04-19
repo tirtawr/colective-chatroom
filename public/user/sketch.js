@@ -1,9 +1,7 @@
 $(document).ready(function() {
   socket = io('/user');
-
-
   socket.on('connect', function() {
-    console.log("Connected", socket.id);
+      console.log("Connected", socket.id);
 
     socket.on('setCredentials', function(credentials) {
       // credentials format
@@ -14,6 +12,9 @@ $(document).ready(function() {
       // }
       console.log('credentials', credentials)
       document.credentials = credentials
+      if (credentials.role == "USER") {
+        $(`#chat-room-${credentials.roomNumber}`).append('<div><input class="message_input" placeholder="Type here" type="text" /><botton class="message_button" onclick="document.sendMessage()">Send</button></div>')
+      }
     });
 
     socket.on('message', function(message) {
