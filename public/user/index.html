@@ -3,11 +3,13 @@
 
 <head>
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,42 +30,47 @@
 
 
   <div class="grid-col">
-    <div class="cell" id="chat-room-1">
+    <div class="cell" id="chatroom-1">
       <div class="chatroom-header">
-        <h2 class="room_number">Chat Room 1</h2>
+        <h2 class="chatroom-number">Chat Room 1</h2>
       </div>
-      <div id="chat-room-messages-1"></div>
+      <div class="chatroom-messages" id="chatroom-messages-1"></div>
     </div>
-    <div class="cell" id="chat-room-2">
+    <div class="cell" id="chatroom-2">
       <div class="chatroom-header">
-        <h2 class="room_number">Chat Room 2</h2>
+        <h2 class="chatroom-number">Chat Room 2</h2>
       </div>
-      <div id="chat-room-messages-2"></div>
+      <div class="chatroom-messages" id="chatroom-messages-2"></div>
     </div>
-    <div class="cell" id="chat-room-3">
+    <div class="cell" id="chatroom-3">
       <div class="chatroom-header">
-        <h2 class="room_number">Chat Room 3</h2>
+        <h2 class="chatroom-number">Chat Room 3</h2>
       </div>
-      <div id="chat-room-messages-3"></div>
+      <div class="chatroom-messages" id="chatroom-messages-3"></div>
     </div>
-    <div class="cell" id="chat-room-4">
+    <div class="cell" id="chatroom-4">
       <div class="chatroom-header">
-        <h2 class="room_number">Chat Room 4</h2>
+        <h2 class="chatroom-number">Chat Room 4</h2>
       </div>
-      <div id="chat-room-messages-4"></div>
+      <div class="chatroom-messages" id="chatroom-messages-4"></div>
     </div>
-    <div class="cell" id="chat-room-5">
+    <div class="cell" id="chatroom-5">
       <div class="chatroom-header">
-        <h2 class="room_number">Chat Room 5</h2>
+        <h2 class="chatroom-number">Chat Room 5</h2>
       </div>
-      <div id="chat-room-messages-5"></div>
+      <div class="chatroom-messages" id="chatroom-messages-5"></div>
     </div>
-    <div class="cell" id="chat-room-6">
+    <div class="cell" id="chatroom-6">
       <div class="chatroom-header">
-        <h2 class="room_number">Chat Room 6</h2>
+        <h2 class="chatroom-number">Chat Room 6</h2>
       </div>
-      <div id="chat-room-messages-6"></div>
+      <div class="chatroom-messages" id="chatroom-messages-6"></div>
     </div>
+  </div>
+  
+  <div class="user-input-group">
+    <input id="user-input-input" placeholder="Type here" type="text" />
+    <botton id="user-input-button" onclick="document.sendMessage()">Send</button>
   </div>
   <script src="sketch.js"></script>
 </body>

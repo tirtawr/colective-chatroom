@@ -13,7 +13,7 @@ $(document).ready(function() {
       console.log('credentials', credentials)
       document.credentials = credentials
       // if (credentials.role == "USER") {
-      //   $(`#chat-room-${credentials.roomNumber}`).append('<div><input class="message_input" id="user-input" placeholder="Type here" type="text" /><botton class="message_button" onclick="document.sendMessage()">Send</button></div>')
+      //   $(`#chatroom-${credentials.roomNumber}`).append('<div><input class="message-input" id="user-input" placeholder="Type here" type="text" /><botton class="message-button" onclick="document.sendMessage()">Send</button></div>')
       // }
     });
 
@@ -25,13 +25,13 @@ $(document).ready(function() {
       //   senderName: String
       // }
       console.log('message', message)
-      $(`#chat-room-messages-${message.roomNumber}`).append(`<p class="incoming"><strong>${message.senderName}</strong>: ${message.text}</p>`)
+      $(`#chatroom-messages-${message.roomNumber}`).append(`<p class="incoming"><strong>${message.senderName}</strong>: ${message.text}</p>`)
     });
   });
 
   document.sendMessage = function() {
     socket.emit('message', {
-      text: $("#user-input").val(),
+      text: $("#user-input-input").val(),
       roomNumber: document.credentials.roomNumber,
       senderName: document.credentials.name
     });
