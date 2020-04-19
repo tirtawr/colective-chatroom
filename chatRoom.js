@@ -23,7 +23,7 @@ class ChatRoom {
       };
       return this.users[userId];
     }
-    return { 
+    return {
       role: 'AUDIENCE',
       name: 'Audience',
       roomNumber: -1
