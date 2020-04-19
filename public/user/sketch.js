@@ -1,50 +1,53 @@
-socket = io('/user');
-userData = {}
+$(document).ready(function() {
+  socket = io('/user');
 
-socket.on('connect', function() {
-  console.log("Connected", socket.id);
 
-  socket.on('setCredentials', function(credentials) {
-    // credentials format
-    // {
-    //   role: String (USER or AUDIENCE)
-    //   name: String
-    //   roomNumber: Number
-    // }
-    console.log('credentials', credentials)
-    userData = credentials
+  socket.on('connect', function() {
+    console.log("Connected", socket.id);
+
+    socket.on('setCredentials', function(credentials) {
+      // credentials format
+      // {
+      //   role: String (USER or AUDIENCE)
+      //   name: String
+      //   roomNumber: Number
+      // }
+      console.log('credentials', credentials)
+      document.credentials = credentials
+    });
+
+    socket.on('message', function(message) {
+      // message format
+      // {
+      //   text: String
+      //   roomNumber: Number
+      //   senderName: String
+      // }
+      console.log('message', message)
+
+      // TODO: insert messages based on room number
+    });
   });
 
-  socket.on('message', function(message) {
-    $('.chat').append('<p><strong>' + data.user + '</strong>: ' + data.message + '</p>');
-    // message format
-    // {
-    //   text: String
-    //   roomNumber: Number
-    //   senderName: String
-    // }
-    console.log('message', message)
+  // TODO: actually fill the text from a user input
+  // $('.chat').append('<p><strong>' + data.user + '</strong>: ' + data.message + '</p>');
 
-    // TODO: insert messages based on room number
-  });
+  // let input;
+  // input = select('#message_input');
+
+
+  // function keyPressed() {
+  //   if (keyCode == ENTER) {
+  //     input.value('');
+  //   }
+  // }
+
+  document.sendMessage = function() {
+    socket.emit('message', {
+      text: 'the quick brown dog jumped over the lazy fox',
+      roomNumber: document.credentials.roomNumber,
+      senderName: document.credentials.name
+    });
+  };
+
 });
-
-// TODO: actually fill the text from a user input
-
-let input;
-input = select('#message_input');
-
-
-function keyPressed() {
-  if (keyCode == ENTER) {
-    input.value('');
-  }
-}
-
-function sendMessage() {
-  socket.emit('message', {
-    text: 'the quick brown dog jumped over the lazy fox',
-    roomNumber: userData.roomNumber,
-    senderName: userData.name
-  });
-};
