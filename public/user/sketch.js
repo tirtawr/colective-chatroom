@@ -26,22 +26,8 @@ $(document).ready(function() {
       // }
       console.log('message', message)
       $(`#chat-room-messages-${message.roomNumber}`).append(`<p class="incoming"><strong>${message.senderName}</strong>: ${message.text}</p>`)
-      // TODO: insert messages based on room number
     });
   });
-
-  // TODO: actually fill the text from a user input
-  // $('.chat').append('<p><strong>' + data.user + '</strong>: ' + data.message + '</p>');
-
-  // let input;
-  // input = select('#message_input');
-
-
-  // function keyPressed() {
-  //   if (keyCode == ENTER) {
-  //     input.value('');
-  //   }
-  // }
 
   document.sendMessage = function() {
     socket.emit('message', {
