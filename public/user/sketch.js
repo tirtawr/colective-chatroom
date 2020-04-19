@@ -13,7 +13,7 @@ $(document).ready(function() {
       console.log('credentials', credentials)
       document.credentials = credentials
       if (credentials.role == "USER") {
-        $(`#chat-room-${credentials.roomNumber}`).append('<div><input class="message_input" placeholder="Type here" type="text" /><botton class="message_button" onclick="document.sendMessage()">Send</button></div>')
+        $(`#chat-room-${credentials.roomNumber}`).append('<div><input class="message_input" id="user-input" placeholder="Type here" type="text" /><botton class="message_button" onclick="document.sendMessage()">Send</button></div>')
       }
     });
 
@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   document.sendMessage = function() {
     socket.emit('message', {
-      text: 'the quick brown dog jumped over the lazy fox',
+      text: $("#user-input").val(),
       roomNumber: document.credentials.roomNumber,
       senderName: document.credentials.name
     });
