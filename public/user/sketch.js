@@ -25,7 +25,7 @@ $(document).ready(function() {
       //   senderName: String
       // }
       console.log('message', message)
-
+      $(`#chat-room-messages-${message.roomNumber}`).append(`<p class="incoming"><strong>${message.senderName}</strong>: ${message.text}</p>`)
       // TODO: insert messages based on room number
     });
   });
