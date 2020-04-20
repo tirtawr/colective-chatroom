@@ -12,6 +12,9 @@ $(document).ready(function() {
       // }
       console.log('credentials', credentials)
       document.credentials = credentials
+      name = document.credentials.name
+      room = document.credentials.roomNumber
+      document.getElementById("identification").textContent = `You are ${name}, in room ${room}.`
       // if (credentials.role == "USER") {
       //   $(`#chatroom-${credentials.roomNumber}`).append('<div><input class="message-input" id="user-input" placeholder="Type here" type="text" /><botton class="message-button" onclick="document.sendMessage()">Send</button></div>')
       // }
