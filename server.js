@@ -31,7 +31,8 @@ userSockets.on('connection', function (userSocket) {
   //  {
   //    text: message.text,
   //    roomNumber: message.roomNumber,
-  //    senderName: message.senderName
+  //    senderName: message.senderName,
+  //    color: color
   //  }
     userSockets.emit('message', message);
   })

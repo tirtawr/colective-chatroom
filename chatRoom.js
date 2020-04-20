@@ -19,7 +19,8 @@ class ChatRoom {
       this.users[userId] = {
         role: 'USER',
         name: this._getAvailableName(),
-        roomNumber: this._getAvailableRoomNumber()
+        roomNumber: this._getAvailableRoomNumber(),
+        color: this._randColor()
       };
       return this.users[userId];
     }
@@ -55,6 +56,16 @@ class ChatRoom {
       return -1;
     }
   }
+
+  //function i found on the internet to assign a random color
+  _randColor(){
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            };
 
   // Put back a name into the queue
   _returnName(name) {
