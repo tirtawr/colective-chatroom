@@ -13,9 +13,17 @@ $(document).ready(function() {
       console.log('credentials', credentials)
       document.credentials = credentials
       name = document.credentials.name
-      room = document.credentials.roomNumber
+      roomNumber = document.credentials.roomNumber
       color = document.credentials.color
-      document.getElementById("identification").innerHTML = `You are <strong>${name}</strong>, in <strong>Room ${room}</strong>.`
+
+      if (roomNumber > 0) {
+        document.querySelector('#identification').innerHTML = `You are <strong>${name}</strong>, in <strong>Room ${roomNumber}</strong>.`
+      } else {
+        document.querySelector('#identification').innerHTML = `Sorry, the room is full, you are an <strong>Audience</strong>`
+        document.querySelector('#user-input').style.display = 'none';
+      }
+
+        
       // if (credentials.role == "USER") {
       //   $(`#chatroom-${credentials.roomNumber}`).append('<div><input class="message-input" id="user-input" placeholder="Type here" type="text" /><botton class="message-button" onclick="document.sendMessage()">Send</button></div>')
       // }
