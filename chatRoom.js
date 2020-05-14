@@ -5,8 +5,8 @@ class ChatRoom {
     // NOTE: 12 users will be involved, while the rest will watch
     // There should be exactly 12 names and 6 pairs of room numbers,
     // otherwise shit will hit the fan
-    this.availableNames = ['Kitty', 'Birdy', 'Whaley', 'Puppy', 'Calfy', 'Piglet', 'Crocky', 'Goosey', 'Koala', 'Otter', 'Parrot', 'Rabbit'];
-    this.availableRoomNumbers = [1,1,2,2,3,3,4,4,5,5,6,6];
+    this.availableNames = ['Kitty', 'Birdy', 'Whaley', 'Puppy', 'Calfy', 'Crocky'];
+    this.availableRoomNumbers = [1,1,2,2,3,3];
     shuffleArray(this.availableNames);
     shuffleArray(this.availableRoomNumbers);
     this.users = {};
@@ -57,7 +57,7 @@ class ChatRoom {
     }
   }
 
-  //function i found on the internet to assign a random color
+  // Select random color
   _randColor(){
                 var letters = '0123456789ABCDEF'.split('');
                 var color = '#';

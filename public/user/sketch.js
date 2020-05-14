@@ -15,7 +15,7 @@ $(document).ready(function() {
       name = document.credentials.name
       room = document.credentials.roomNumber
       color = document.credentials.color
-      document.getElementById("identification").textContent = `You are ${name}, in room ${room}.`
+      document.getElementById("identification").innerHTML = `You are <strong>${name}</strong>, in <strong>Room ${room}</strong>.`
       // if (credentials.role == "USER") {
       //   $(`#chatroom-${credentials.roomNumber}`).append('<div><input class="message-input" id="user-input" placeholder="Type here" type="text" /><botton class="message-button" onclick="document.sendMessage()">Send</button></div>')
       // }

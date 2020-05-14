@@ -18,7 +18,7 @@
 
 <body>
   <h1 class="title">A Conversation</h1>
-  <h2 class="prompt">Ask your partner a question.</h2>
+  <h2 class="prompt">Go ask your partner a question.</h2>
   <div>
     <ul class="question">
       <li>What’s the best advice you can give to me?</li>
@@ -51,32 +51,17 @@
       </div>
       <div class="chatroom-messages" id="chatroom-messages-3"></div>
     </div>
-    <div class="cell" id="chatroom-4">
-      <div class="chatroom-header">
-        <h2 class="chatroom-number">Chat Room 4</h2>
-      </div>
-      <div class="chatroom-messages" id="chatroom-messages-4"></div>
-    </div>
-    <div class="cell" id="chatroom-5">
-      <div class="chatroom-header">
-        <h2 class="chatroom-number">Chat Room 5</h2>
-      </div>
-      <div class="chatroom-messages" id="chatroom-messages-5"></div>
-    </div>
-    <div class="cell" id="chatroom-6">
-      <div class="chatroom-header">
-        <h2 class="chatroom-number">Chat Room 6</h2>
-      </div>
-      <div class="chatroom-messages" id="chatroom-messages-6"></div>
-    </div>
   </div>
 
-  <div class="user-input-group">
+  <div class="chat-footer-container">
     <div id="identification">
+      
     </div>
-    <div>
-      <input id="user-input-input" placeholder="Type here" type="text" />
-      <botton id="user-input-button" onclick="document.sendMessage()">Send</button>
+    <div class="user-input-group">
+      <div>
+        <input id="user-input-input" placeholder="Type here" type="text" />
+        <botton id="user-input-button" onclick="document.sendMessage()">Send</button>
+      </div>
     </div>
   </div>
   <script src="sketch.js"></script>
