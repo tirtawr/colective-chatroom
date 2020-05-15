@@ -17,7 +17,7 @@ $(document).ready(function() {
       color = document.credentials.color
 
       if (roomNumber > 0) {
-        document.querySelector('#identification').innerHTML = `You are <strong>${name}</strong>, in <strong>Room ${roomNumber}</strong>.`
+        document.querySelector('#identification').innerHTML = `Your name is <strong>${name}</strong>, in <strong>Room ${roomNumber}</strong>.`
       } else {
         document.querySelector('#identification').innerHTML = `Sorry, the room is full, you are an <strong>Audience</strong>`
         document.querySelector('#user-input').style.display = 'none';
