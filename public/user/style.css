@@ -28,6 +28,10 @@ h2 {
   font-weight: bold;
 }
 
+li {
+  line-height: 1.4em;
+}
+
 strong {
   font-weight: bold;
 }
@@ -91,7 +95,9 @@ ul {
 .chat-footer-container {
   margin: 0 auto;
   padding: 24px;
-  border: 6px solid #000000;
+  border-left: 6px solid #000000;
+  border-right: 6px solid #000000;
+  border-bottom: 6px solid #000000;
 }
 
 .user-input-group {

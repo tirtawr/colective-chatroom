@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  width: auto;
+  padding: 20px 20px 0;
+  font-family: 'Noto Sans', sans;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.text-container {
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+.title {
+  text-align: center;
+  margin: 60px;
+}
+
+.btn-main {
+  display: block;
+  margin: 50px auto;
+}
+
